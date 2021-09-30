@@ -9,13 +9,8 @@ int main() {
     cin >> height;
 
 	for (int i = 0; i <  height; i++) {	
-		for (int j = 0; j < length; j++) {
-			if (i == 0 || i == height-1 || j == 0 || j == length-1) {
-				cout << "*";	
-			}
-			else {
-				cout << " ";
-			}	
+		for (int j = 0; j < i; j++) {
+			cout << "*";
 		}
 		cout << endl;
 	}
