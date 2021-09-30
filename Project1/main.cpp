@@ -1,19 +1,19 @@
 #include <iostream>
 using namespace std;
 int main() {
-	int length;
 	int height;
-	cout << "Enter length: ";
-	cin >> length;
 	cout << "Enter haight: ";
-    cin >> height;
+	cin >> height;
 
-	for (int i = 0; i <  height; i++) {	
+	for (int i = 0; i < height; i++) {
 		for (int j = 0; j < i; j++) {
-			cout << "*";
+			if (j == 0 || j == i - 1 || j == height - 1 || i == height - 1) {
+				cout << "*";
+			}
+			else {
+				cout << " ";
+			}
 		}
 		cout << endl;
 	}
 }
-
-
