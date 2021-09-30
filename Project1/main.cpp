@@ -5,9 +5,9 @@ int main() {
 	cout << "Enter haight: ";
 	cin >> height;
 
-	for (int i = 0; i < height; i++) {
-		for (int j = 0; j < i; j++) {
-			if (j == 0 || j == i - 1 || j == height - 1 || i == height - 1) {
+	for (int i = 1; i <= height; i++) {
+		for (int j = 1; j <= i; j++) {
+			if (j == 1 || j == i || j == height || i == height) {
 				cout << "*";
 			}
 			else {
