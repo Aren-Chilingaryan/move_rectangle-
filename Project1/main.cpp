@@ -13,8 +13,6 @@ int main() {
 	cin >> what_to_print;
 
 	while (true) {
-
-
 		if (what_to_print == "t") {
 			for (int i = 0; i < height; i++) {
 				for (int j = 0; j <= i; j++) {
@@ -55,14 +53,10 @@ int main() {
 				}
 				cout << endl;
 			}
-
 		}
 		if (what_to_print == "quiet") {
 			break;
-
 		}
 		cin >> what_to_print;
-
 	}
-
 }
