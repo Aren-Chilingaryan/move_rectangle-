@@ -1,6 +1,15 @@
 #include <iostream>
 #include <cstring>
+#include <Windows.h>
+#include <conio.h>
+#include <iomanip>
+#include <stdio.h>
 using namespace std;
+
+void Clear()
+{
+	cout << "\x1B[2J\x1B[H";
+}
 
 void print_triangle(int side) {
 	for (int i = 0; i < side; i++) {
@@ -16,8 +25,9 @@ void print_triangle(int side) {
 	}
 }
 
-void print_rectangle(int height, int length) {
+void print_rectangle(int height, int length,int x) {
 	for (int i = 0; i < height; i++) {
+		cout << setw(x);
 		for (int j = 0; j < length; j++) {
 			if (i == 0 || i == height - 1 || j == 0 || j == length - 1) {
 				cout << "*";
@@ -43,36 +53,31 @@ void print_square(int side) {
 		cout << endl;
 	}
 }
+void clrscr() {};
 
 int main() {
+
 	int height;
 	int length;
-	string what_to_print;
 	cout << "Enter height: ";
 	cin >> height;
 	cout << "Enter length: ";
 	cin >> length;
-	cout << "What to print ? ";
-	cin >> what_to_print;
+	string area = " ";
+	int x = 5;
+
+	print_rectangle(height, length, x);
 
 	while (true) {
-
-		if (what_to_print == "t") {
-			print_triangle(height);
+		if (GetAsyncKeyState(VK_LEFT)) {
+			Clear();
+			print_rectangle(height, length, x);
+			x = x - 1;
 		}
-
-		if (what_to_print == "r") {
-			print_rectangle(height, length);
+		else if (GetAsyncKeyState(VK_RIGHT)) {
+			Clear();
+			print_rectangle(height, length, x);
+			x = x + 1;
 		}
-
-		if (what_to_print == "s") {
-			print_square(height);
-		}
-
-		if (what_to_print == "quiet") {
-			break;
-		}
-		cout << "What to print ? ";
-		cin >> what_to_print;
 	}
 }
