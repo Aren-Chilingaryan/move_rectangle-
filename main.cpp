@@ -48,11 +48,36 @@ void print_square(int side) {
 				cout << " ";
 			}
 		}
-		cout << endl;
+		cout << endl;     
 	}
 }
 
-
+void decide_color(string color) {
+	if (color == "red") {
+		system("Color C");
+	}
+	else if (color == "green") {
+		system("Color A");
+	}
+	else if (color == "blue") {
+		system("Color 1");
+	}
+	else if (color == "aqua") {
+		system("Color 3");
+	}
+	else if (color == "purple") {
+		system("Color 5");
+	}
+	else if (color == "yellow") {
+		system("Color 6");
+	}
+	else if (color == "gray") {
+		system("Color 8");
+	}
+	else if (color == "white") {
+		system("Color 7");
+	}
+}
 
 int main() {
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -74,7 +99,7 @@ int main() {
 	int quantity_of_spaces = 0;
 	int quantity_of_new_lines = 1;
 
-	
+	decide_color(color);
 	print_rectangle(height, length, quantity_of_spaces, quantity_of_new_lines);
 	while (true) {
 		if (GetAsyncKeyState(VK_LEFT)) {
