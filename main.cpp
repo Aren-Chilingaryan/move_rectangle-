@@ -105,30 +105,30 @@ int main() {
 		if (GetAsyncKeyState(VK_LEFT)) {
 			quantity_of_spaces -= 1;
 			system("CLS");
-			print_rectangle(height, length, quantity_of_spaces, quantity_of_new_lines);
 			if (quantity_of_spaces < 0)
 				quantity_of_spaces = 0;
+			print_rectangle(height, length, quantity_of_spaces, quantity_of_new_lines);	
 		}
 		else if (GetAsyncKeyState(VK_RIGHT)) {
 			quantity_of_spaces += 1;
 			system("CLS");
-			print_rectangle(height, length, quantity_of_spaces, quantity_of_new_lines);
 			if (quantity_of_spaces > (columns - length))
 				quantity_of_spaces = (columns - length);
+			print_rectangle(height, length, quantity_of_spaces, quantity_of_new_lines);	
 		}
 		else if (GetAsyncKeyState(VK_UP)) {
 			quantity_of_new_lines -= 1;
 			system("CLS");
-			print_rectangle(height, length, quantity_of_spaces, quantity_of_new_lines);
 			if (quantity_of_new_lines < 0)
 				quantity_of_new_lines = 0;
+			print_rectangle(height, length, quantity_of_spaces, quantity_of_new_lines);
 		}
 		else if (GetAsyncKeyState(VK_DOWN)) {
 			quantity_of_new_lines += 1;
 			system("CLS");
-			print_rectangle(height, length, quantity_of_spaces, quantity_of_new_lines);
 			if (quantity_of_new_lines > rows - height)
 				quantity_of_new_lines = rows - height;
+			print_rectangle(height, length, quantity_of_spaces, quantity_of_new_lines);	
 		}
 	}
 }
