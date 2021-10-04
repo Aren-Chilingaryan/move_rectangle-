@@ -48,11 +48,11 @@ void print_square(int side) {
 				cout << " ";
 			}
 		}
-		cout << endl;     
+		cout << endl;
 	}
 }
 
-void decide_color(string color) {
+void get_color(string color) {
 	if (color == "red") {
 		system("Color C");
 	}
@@ -99,7 +99,7 @@ int main() {
 	int quantity_of_spaces = 0;
 	int quantity_of_new_lines = 1;
 
-	decide_color(color);
+	get_color(color);
 	print_rectangle(height, length, quantity_of_spaces, quantity_of_new_lines);
 	while (true) {
 		if (GetAsyncKeyState(VK_LEFT)) {
